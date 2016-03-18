@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="stylesheets/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/bootstrap/bootstrap.min.js">
+
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.jpeg" %>
+      <% end %>
+    </div>
+  
+    <ul>
+      <li class="category">Website</li>
+      <li><%=link_to "Blogs", root_path %></li>
+      <li>About</li>
+      </ul>
+    <ul>
+      <li><a href="#">a</a></li>
+      <li><a href="#">a</a></li>
+      <li><a href="#">a</a></li>
+      <li><a href="#">a</a></li>
+      <li><a href="#">a</a></li>
+
+    </ul>
+
+    <p class="sign_in">Admin Login</p>
+  </div>
+
+  <div id="main_content">
+    <div id="header">
+      <p>All post</p>
+      <div class="button">
+        <button class="button"><%= link_to "new post", new_post_path %></button>
+        <button class="button">log out</button>
+      </div>
+    </div>
+    <%= flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "arlet") %>
+    <% end %>
+    <%= yield %>
+  </div>
+
+
+
+</body>
+</html>
