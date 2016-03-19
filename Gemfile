@@ -51,5 +51,9 @@ group :development do
     gem 'pg'
     gem 'rails_12factor'
   end
+
+  group :assets do
+  gem 'jquery-ui-rails', :git => 'https://github.com/joliss/jquery-ui-rails'
+end
 end
 
